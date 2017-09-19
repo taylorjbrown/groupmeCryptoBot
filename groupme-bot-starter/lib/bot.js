@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const https = require('https');
 
+
 class Bot {
     /**
      * Called when the bot receives a message.
@@ -12,26 +13,48 @@ class Bot {
      * @param {Object} message The message data incoming from GroupMe
      * @return {string}
      */
+
+
+    static cryptoGet(query, callback){
+       https.get({
+            host: 'min-api.cryptocompare.com',
+            //path: '/data/price?fsym=query&tsyms=BTC,USD,EUR',
+            path:'/data/price?fsym='+query+'&tsyms=USD',
+            JSON:true
+            }, 
+            function(response){
+                var resData = '';
+                response.on('data', function(chunk){
+                    resData +=chunk;
+                });
+                    
+                response.on('end', function(){   
+                    callback(JSON.parse(resData));
+                });
+            });
+    }
+
+
+
     static checkMessage(message) {
+        console.log("in check message");
+
         const messageText = message.text;
-
-        // Learn about regular expressions in JavaScript: https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions
-        const botRegex = /^price of \<\w+\>/;
-
+        var botRegex = /^price of \<\w+\>/;
+        var crypCur = /\<\w+\>/;
         // Check if the GroupMe message has content and if the regex pattern is true
         if (messageText && botRegex.test(messageText)) {
-            // Check is successful, return a message!
-            //return ticker price
-            //return getTicker(messageText);
-            return '¯\\_(ツ)_/¯';
+            var cryptoCur = crypCur.exec(messageText);
+            var cur = cryptoCur[0].slice(1,-1);
+            return cur;
         }
-
-        return null;
     };
 
-    /*static getTicker(coin){
+    /*static cleanResponose(text){
+        var regex = ;
 
-    };*/
+        return 
+    }*/
 
     /**
      * Sends a message to GroupMe with a POST request.

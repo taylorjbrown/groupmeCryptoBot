@@ -77,8 +77,19 @@ class Server {
         // Give the message data to the bot
         const messageResponse = Bot.checkMessage(requestMessage);
 
+
         if (messageResponse) {
-            Bot.sendMessage(messageResponse);
+            Bot.cryptoGet(messageResponse,function(result){
+
+                var d = new Date();
+
+                var sendInfo = "Ticker: "+messageResponse +"\n"
+                + "USD: "+ result['USD'] + "\n"
+                + "TimeStamp: " + d.toLocaleString(); 
+
+
+                Bot.sendMessage(sendInfo);
+            })
         }
     };
 };
