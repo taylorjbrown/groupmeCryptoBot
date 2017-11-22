@@ -19,44 +19,47 @@
 - This is extremely helpful to get a quick idea about how the groups different tokens are doing that day
 
 ### What you need to use this application:
-#### 1) A groupme with a number of fellow crypto enthusiast
-#### 2) The ability to deploy to a web hosting site
-
-### Deploying to Heroku
-
-[Heroku](https://www.heroku.com/) is a nice option because of its PaaS 'push and forget' style of deployment. Heroku has a limited free tier that is great for deploying chat bots (the paid tier isn't too bad). Follow [these steps](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) to get your machine setup with Heroku and deploy your chat bot. Heroku even lets you easily set environment variables within their dashbaord or command line interface. This is super useful for setting a bot id configuration variable on Heroku.
-
-### Deploying to dokku
-
-[Dokku](http://dokku.viewdocs.io/dokku/) is another great option because its open source! Similar to Heroku, dokku allows you to 'push and forget', but the setup for dokku is more involved as it requires you to setup your own cloud server and install dokku before you can deploy. See [this guide](http://dokku.viewdocs.io/dokku/deployment/application-deployment/) for deploying to dokku. Like Heroku, dokku allows you to easily set environment variables like your bot id.
-
-### Deploying to a cloud server
-
-Heroku and dokku are great options for deployment but a small cloud server will run this bot with little setup. Some great, inexpensive cloud providers include [DigitalOcean](https://www.digitalocean.com/), [Amazon AWS](https://aws.amazon.com/), [Microsoft Azure](https://azure.microsoft.com/), [Linode](https://www.linode.com/), [Rackspace](https://www.rackspace.com/), Setting up, deploying, and maintaining your app on your own cloud server is more involved than a Heroku or dokku setup.
-
-After spinning up a linux box, you would:
-
-1. Install [Node.js](https://nodejs.org/)
-2. Install a process manager like [forever](https://github.com/foreverjs/forever) to run the bot in the background
-3. `git clone` this bot to the server
-4. Start the bot with the process manager
-    Example forever:
-        
-
-### Resources For Further Development
-- Crypto Currency information is being pulled from [the CryptoCompare API](https://www.cryptocompare.com/api/#)
-- The starter bot and the deploymeant steps came from [ACMatUC/groupme-bot-starter](https://github.com/ACMatUC/groupme-bot-starter.git)
-- The [Groupme API](https://dev.groupme.com/) can be of further help to find other ways to expand upon this process
+#### 1) A groupme with a number of fellow Crypto Currency enthusiast
+#### 2) The willingness to deploy to a web hosting service
 
 ### Register a new GroupMe Bot
 
 * Head over to [dev.groupme.com](https://dev.groupme.com/) and login with your GroupMe credentials
 * [Go to the `bots` tab and select `Create Bot`](screenshots/dev.groupme.com.png)
-* [Choose a group, and avatar uri for the bot. The callback url will be that of the server you are deploying on](screenshots/example3.png)
+* [Choose a group, and avatar uri for the bot. The callback url will be that of the server you are deploying on, use http://localhost:3000 as a placeholder for now](screenshots/example3.png)
 * Select `Submit` to create your bot
 * Select your bot from the list of bots and save the bot id for later
-* Check the group that you added the bot to. There should be a message in chat that your bot was added to the group
-* Optional step: use the 'Test Your Bot' form (or use the provided `curl` command) on the newly created bot page to send a message to chat! This is an easy way to see how the bot interacts with GroupMe
+* Check the group where you added the bot. There should be a message in chat that your bot was added to the group
+
+### Deploying to a cloud server
+**(Recommended, cleanest steps to have the bot run continually)**
+
+Heroku and dokku are great options for deployment but a small cloud server will run this bot with little setup. Some great, inexpensive cloud providers include [DigitalOcean](https://www.digitalocean.com/), [Amazon AWS](https://aws.amazon.com/), [Microsoft Azure](https://azure.microsoft.com/), [Linode](https://www.linode.com/), [Rackspace](https://www.rackspace.com/), Setting up, deploying, and maintaining your app on your own cloud server is more involved than a Heroku or dokku setup.
+
+After spinning up a linux box:
+
+1. Install [Node.js](https://nodejs.org/)
+2. Install a process manager like [forever](https://github.com/foreverjs/forever) to run the bot in the background
+3. `git clone` this bot to the server
+4. change the botID to that of the one created above
+5. change on dev.groupme.com the callback url to be that of the server you just created
+6. test the bot works by running 'npm dev start' and in the chat use the bot's commands, you should get the output like above
+7. Start the bot with the process manager
+    Example forever: $ forever start --append -l forever.log -o out.log -e err.log app.js
+
+### Deploying to Heroku
+
+[Heroku](https://www.heroku.com/) is a nice option because of its PaaS 'push and forget' style of deployment. Heroku has a limited free tier that is great for deploying chat bots (the paid tier isn't too bad). Follow [these steps](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) to get your machine setup with Heroku and deploy the bot. Heroku even lets you easily set environment variables within their dashbaord or command line interface. This is super useful for setting a bot id configuration variable on Heroku.
+
+### Deploying to dokku
+
+[Dokku](http://dokku.viewdocs.io/dokku/) is another great option because its open source! Similar to Heroku, dokku allows you to 'push and forget', but the setup for dokku is more involved as it requires you to setup your own cloud server and install dokku before you can deploy. See [this guide](http://dokku.viewdocs.io/dokku/deployment/application-deployment/) for deploying to dokku. Like Heroku, dokku allows you to easily set environment variables like your bot id.
+
+### Resources For Further Development/Help
+
+- Crypto Currency information is being pulled from [the CryptoCompare API](https://www.cryptocompare.com/api/#)
+- The starter bot and the deployment steps came from [ACMatUC/groupme-bot-starter](https://github.com/ACMatUC/groupme-bot-starter.git)
+- The [Groupme API](https://dev.groupme.com/) can be of further help to find other ways to expand upon this bot
 
 ## License
 
