@@ -10,8 +10,10 @@
 - This command shows the information displayed above, very easy way to show a group how a certain token is doing
 - Use this to brag about how well you call about the currency was or be sadeded about the turn of the coin for the day
 
-### "dump them out"
-![example2](screenchots/example2.png)
+#### "dump them out"
+
+![example2](screenshots/example2.png)
+
 - This command comes with a few tokens that it will display the value for, however, over time it will display the top 10 tokens that the group is constently asking the price on.
 - This is extremely helpful to get a quick idea about how the groups different tokens are doing that day.
 ## What you need to use this application
