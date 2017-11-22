@@ -20,17 +20,7 @@
 
 ### What you need to use this application:
 #### 1) A groupme with a number of fellow crypto enthusiast
-#### 2) Ability to deploy to a web hosting site
-
-### 1. Register a new GroupMe Bot
-
-* Head over to [dev.groupme.com](https://dev.groupme.com/) and login with your GroupMe credentials
-* [Go to the `bots` tab and select `Create Bot`](screenshots/dev.groupme.com.png)
-* [Choose a group, and avatar uri for the bot. The callback url will be that of the server you are deploying on](screenshots/bot-create.jpg)
-* Select `Submit` to create your bot
-* [Select your bot from the list of bots and save the bot id for later](screenshots/bot-created.jpg)
-* Check the group that you added the bot to. There should be a message in chat that your bot was added to the group
-* Optional step: use the 'Test Your Bot' form (or use the provided `curl` command) on the newly created bot page to send a message to chat! This is an easy way to see how the bot interacts with GroupMe
+#### 2) The ability to deploy to a web hosting site
 
 ### Deploying to Heroku
 
@@ -42,19 +32,31 @@
 
 ### Deploying to a cloud server
 
-Heroku and dokku are great options for deployment of your chat bot, but you can simply spin up a small cloud server and run your chat bot with little setup. Some great, inexpensive cloud providers include [DigitalOcean](https://www.digitalocean.com/), [Amazon AWS](https://aws.amazon.com/), [Microsoft Azure](https://azure.microsoft.com/), [Linode](https://www.linode.com/), [Rackspace](https://www.rackspace.com/), and more! Setting up, deploying, and maintaining your app on your own cloud server is more involved than a Heroku or dokku setup, but it does allow for more customization.
+Heroku and dokku are great options for deployment but a small cloud server will run this bot with little setup. Some great, inexpensive cloud providers include [DigitalOcean](https://www.digitalocean.com/), [Amazon AWS](https://aws.amazon.com/), [Microsoft Azure](https://azure.microsoft.com/), [Linode](https://www.linode.com/), [Rackspace](https://www.rackspace.com/), Setting up, deploying, and maintaining your app on your own cloud server is more involved than a Heroku or dokku setup.
 
 After spinning up a linux box, you would:
 
 1. Install [Node.js](https://nodejs.org/)
-2. Install a process manager like [forever](https://github.com/foreverjs/forever) to run your chat bot in the background
-3. `git clone` your chat bot to the server
-4. Start the chat bot with the process manager
+2. Install a process manager like [forever](https://github.com/foreverjs/forever) to run the bot in the background
+3. `git clone` this bot to the server
+4. Start the bot with the process manager
+    Example forever:
+        
 
 ### Resources For Further Development
 - Crypto Currency information is being pulled from [the CryptoCompare API](https://www.cryptocompare.com/api/#)
 - The starter bot and the deploymeant steps came from [ACMatUC/groupme-bot-starter](https://github.com/ACMatUC/groupme-bot-starter.git)
 - The [Groupme API](https://dev.groupme.com/) can be of further help to find other ways to expand upon this process
+
+### Register a new GroupMe Bot
+
+* Head over to [dev.groupme.com](https://dev.groupme.com/) and login with your GroupMe credentials
+* [Go to the `bots` tab and select `Create Bot`](screenshots/dev.groupme.com.png)
+* [Choose a group, and avatar uri for the bot. The callback url will be that of the server you are deploying on](screenshots/example3.png)
+* Select `Submit` to create your bot
+* Select your bot from the list of bots and save the bot id for later
+* Check the group that you added the bot to. There should be a message in chat that your bot was added to the group
+* Optional step: use the 'Test Your Bot' form (or use the provided `curl` command) on the newly created bot page to send a message to chat! This is an easy way to see how the bot interacts with GroupMe
 
 ## License
 
