@@ -36,16 +36,24 @@
 
 Heroku and dokku are great options for deployment but a small cloud server will run this bot with little setup. Some great, inexpensive cloud providers include [DigitalOcean](https://www.digitalocean.com/), [Amazon AWS](https://aws.amazon.com/), [Microsoft Azure](https://azure.microsoft.com/), [Linode](https://www.linode.com/), [Rackspace](https://www.rackspace.com/), Setting up, deploying, and maintaining your app on your own cloud server is more involved than a Heroku or dokku setup.
 
-After spinning up a linux box:
+#### After spinning up a linux box:
 
-1. Install [Node.js](https://nodejs.org/)
-2. Install a process manager like [forever](https://github.com/foreverjs/forever) to run the bot in the background
-3. `git clone` this bot to the server
-4. change the botID to that of the one created above
-5. change on dev.groupme.com the callback url to be that of the server you just created
-6. test the bot works by running 'npm dev start' and in the chat use the bot's commands, you should get the output like above
-7. Start the bot with the process manager
-    Example forever: $ forever start --append -l forever.log -o out.log -e err.log app.js
+##### 1. Install [Node.js](https://nodejs.org/)
+##### 2. Install a process manager like [forever](https://github.com/foreverjs/forever) to run the bot in the background
+##### 3. `git clone` this bot to the server
+##### 4. Change the botID to that of the one created above
+##### 5. Change on dev.groupme.com the callback url to be that of the server you just created
+##### 6. Test the bot works by running 'npm start app.js' and in the group chat use the bot's commands,
+##### If this works you should recieve the output in the group chat as displayed above
+##### If there is no response in the chat:
+##### - Check that you bot ID is entered correctly in the .env file
+##### - The callback url is correctly entered in the groupme bot at dev.groupme.com/bots
+##### - Lastly, if all else fails, it is most likely a security group on your webserver not allowing for the correct traffic and I'd recommend looking further into their documentation to resolve the issue
+ 
+##### 7. Start the bot to continuously run with the process manager:
+   
+    Example using forever:
+    $ forever start --append -l forever.log -o out.log -e err.log app.js
 
 ### Deploying to Heroku
 
