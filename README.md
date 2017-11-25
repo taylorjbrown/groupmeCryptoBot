@@ -1,7 +1,17 @@
 
-## Complete Messaging Bot that sends crypto currency information to a designated groupme.
+# Groupme Crypto Currency Price Bot
 
-### There are two commands built into the bot:
+Complete Messaging Bot that sends crypto currency information to a designated groupme. The focus of this project was to enable more discution about how the crypto market is moving at the current day. It is a fun way to become excited about the movements in the market with fellow crypto enthusiast.
+
+
+## Neccessary Requirements:
+
+#### 1) A groupme with a number of fellow Crypto Currency enthusiast
+#### 2) The willingness to deploy to a web hosting service
+
+## How It Works:
+
+### Two text commands:
 
 #### "price of (crypto_ticker)"
 
@@ -18,9 +28,6 @@
 - These tokens change over time to the 10 that the group request the price of most recently
 - This is extremely helpful to get a quick idea about how the groups different tokens are doing that day
 
-### What you need to use this application:
-#### 1) A groupme with a number of fellow Crypto Currency enthusiast
-#### 2) The willingness to deploy to a web hosting service
 
 ### Register a new GroupMe Bot
 
