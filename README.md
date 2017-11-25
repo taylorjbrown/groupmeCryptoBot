@@ -6,7 +6,7 @@ Complete Messaging Bot that sends crypto currency information to a designated gr
 
 ## Neccessary Requirements:
 
-#### 1) A groupme with a number of fellow Crypto Currency enthusiast
+#### 1) A GroupMe with a number of fellow crypto currency enthusiast
 #### 2) The willingness to deploy to a web hosting service
 
 ## How It Works:
