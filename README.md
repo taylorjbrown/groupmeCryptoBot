@@ -1,12 +1,12 @@
 
 # Groupme Crypto Currency Price Bot
 
-Complete Messaging Bot that sends crypto currency information to a designated groupme. The focus of this project was to enable more discution about how the crypto market is moving at the current day. It is a fun way to become excited about the movements in the market with fellow crypto enthusiast.
+A complete messaging bot that sends crypto currency information to a designated groupme. The focus of this project was to enable more discussion about how the crypto market is moving during the current day. It is a fun way to become excited about the movements in the market with fellow crypto enthusiast.
 
 
 ## Neccessary Requirements:
 
-#### 1) A GroupMe with a number of fellow crypto currency enthusiast
+#### 1) A GroupMe with a number of fellow crypto currency enthusiasts
 #### 2) The willingness to deploy to a web hosting service
 
 ## How It Works:
